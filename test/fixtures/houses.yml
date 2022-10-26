@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  floorplan: MyString
+  age: 1
+  price: 1
+  tel: MyString
+  renovation: false
+  detail: MyText
+
+two:
+  address: MyString
+  floorplan: MyString
+  age: 1
+  price: 1
+  tel: MyString
+  renovation: false
+  detail: MyText

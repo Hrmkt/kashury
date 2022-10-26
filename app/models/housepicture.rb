@@ -1,0 +1,2 @@
+class Housepicture < ApplicationRecord
+end
