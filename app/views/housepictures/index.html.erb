@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Housepictures</h1>
+<h1>空き家の写真</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Photo</th>
-      <th>House</th>
+      <th>空き家名</th>
+      <th>写真</th>
+      <th>house</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= housepicture.name %></td>
         <td><%= housepicture.photo %></td>
         <td><%= housepicture.house_id %></td>
-        <td><%= link_to 'Show', housepicture %></td>
-        <td><%= link_to 'Edit', edit_housepicture_path(housepicture) %></td>
-        <td><%= link_to 'Destroy', housepicture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', housepicture %></td>
+        <td><%= link_to '変更', edit_housepicture_path(housepicture) %></td>
+        <td><%= link_to '削除', housepicture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,5 @@
 
 <br>
 
-<%= link_to 'New Housepicture', new_housepicture_path %>
+<%= link_to '写真の新規登録', new_housepicture_path %>
+<p><%= link_to 'トップに戻る' , '/' %></p>

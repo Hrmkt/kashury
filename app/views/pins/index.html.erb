@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pins</h1>
+<h1>ピン一覧</h1>
 
 <table>
   <thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= pin.user_id %></td>
         <td><%= pin.house_id %></td>
-        <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', pin %></td>
+        <td><%= link_to '変更', edit_pin_path(pin) %></td>
+        <td><%= link_to '削除', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Pin', new_pin_path %>
+<%= link_to 'ピンの追加', new_pin_path %>
+<p><%= link_to 'トップに戻る' , '/' %></p>

@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>空き家名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @districts.each do |district| %>
       <tr>
         <td><%= district.name %></td>
-        <td><%= link_to 'Show', district %></td>
-        <td><%= link_to 'Edit', edit_district_path(district) %></td>
-        <td><%= link_to 'Destroy', district, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', district %></td>
+        <td><%= link_to '変更', edit_district_path(district) %></td>
+        <td><%= link_to '削除', district, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New District', new_district_path %>
+<%= link_to '空き家情報の追加', new_district_path %>
+<p><%= link_to 'トップに戻る' , '/' %></p>
