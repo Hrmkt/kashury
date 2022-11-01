@@ -21,7 +21,7 @@ class HousepicturesController < ApplicationController
 
   # POST /housepictures or /housepictures.json
   def create
-    @housepicture = Housepicture.new(housepicture_params)
+    @housepicture = Housepicture.new(housepicture_attributes)
 
     respond_to do |format|
       if @housepicture.save
@@ -37,7 +37,7 @@ class HousepicturesController < ApplicationController
   # PATCH/PUT /housepictures/1 or /housepictures/1.json
   def update
     respond_to do |format|
-      if @housepicture.update(housepicture_params)
+      if @housepicture.update(housepicture_attributes)
         format.html { redirect_to housepicture_url(@housepicture), notice: "Housepicture was successfully updated." }
         format.json { render :show, status: :ok, location: @housepicture }
       else
@@ -57,6 +57,11 @@ class HousepicturesController < ApplicationController
     end
   end
 
+  def get_image
+    housepicture = Housepicture.find(params[:id])
+    send_data(housepicture.photo, disposition: :inline)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_housepicture
@@ -66,5 +71,17 @@ class HousepicturesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def housepicture_params
       params.require(:housepicture).permit(:name, :photo, :house_id)
+    end
+
+    def housepicture_attributes
+      if housepicture_params[:photo].blank?
+        {
+          name: housepicture_params[:name]
+        }
+      else
+      {
+        name: housepicture_params[:name], photo: housepicture_params[:photo].read
+      }
+      end
     end
 end
