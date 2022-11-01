@@ -3,7 +3,11 @@ class HousesController < ApplicationController
 
   # GET /houses or /houses.json
   def index
-    @houses = House.all
+    if params[:tikuid].nil?
+      @houses = House.all
+    else
+      @houses = House.where(district_id: params[:tikuid])
+    end
   end
 
   # GET /houses/1 or /houses/1.json
