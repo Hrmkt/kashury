@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'home/top'
+  #get 'home/top'
+  get '/', to: 'home#top'
   resources :labels
   resources :pins
   resources :housepictures

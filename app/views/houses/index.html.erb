@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Houses</h1>
+<h1>空き家情報</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Address</th>
-      <th>Floorplan</th>
-      <th>Age</th>
-      <th>Price</th>
-      <th>Tel</th>
-      <th>Renovation</th>
-      <th>Detail</th>
+      <th>住所</th>
+      <th>間取り</th>
+      <th>築年数</th>
+      <th>価格</th>
+      <th>TEL</th>
+      <th>改装</th>
+      <th>詳細</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,9 +26,9 @@
         <td><%= house.tel %></td>
         <td><%= house.renovation %></td>
         <td><%= house.detail %></td>
-        <td><%= link_to 'Show', house %></td>
-        <td><%= link_to 'Edit', edit_house_path(house) %></td>
-        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', house %></td>
+        <td><%= link_to '変更', edit_house_path(house) %></td>
+        <td><%= link_to '削除', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,5 @@
 
 <br>
 
-<%= link_to 'New House', new_house_path %>
+<%= link_to '空き家情報の追加', new_house_path %>
+<p><%= link_to 'トップに戻る' , '/' %></p>
