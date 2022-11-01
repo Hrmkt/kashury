@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>地区</th>
       <th>住所</th>
       <th>間取り</th>
       <th>築年数</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @houses.each do |house| %>
       <tr>
+      　<td><%= house.district_id %></td>
         <td><%= house.address %></td>
         <td><%= house.floorplan %></td>
         <td><%= house.age %></td>
