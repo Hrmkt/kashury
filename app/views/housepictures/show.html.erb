@@ -7,7 +7,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @housepicture.photo %>
+  <%= image_tag(url_for(image_of_housepictures_path(@housepicture)),size:'100x100') %></td>
 </p>
 
 <p>
