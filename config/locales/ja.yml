@@ -1,0 +1,35 @@
+ja:
+  activerecord:
+  attributes:
+    users:
+      email: メールアドレス
+      password_dignst: パスワード
+      admin: 管理者
+
+    districts: 
+      name: 地区名
+
+    houses:
+      address: 住所
+      floorplan: 間取り
+      age: 築年数
+      price: 価格
+      tel: TEL
+      renovation: 改装
+      detail: 詳細
+      district_id: 地区情報
+      created_at: 登録日時
+      updated_at: 更新日時
+
+    labels:
+      tag: タグ
+      house_id: 空き家
+
+    housepictures:
+      name: 写真名
+      photo: 写真
+      house_id: 空き家
+
+    pin:
+      user_id: 利用者
+      house_id: 空き家
