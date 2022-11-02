@@ -8,4 +8,5 @@ class User < ApplicationRecord
     validates :password, presence: true
     validates :password, length: { minimum: 8}
     has_secure_password
+    has_many :pins
 end
