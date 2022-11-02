@@ -3,7 +3,11 @@ class HousesController < ApplicationController
 
   # GET /houses or /houses.json
   def index
-    @houses = House.all
+    if params[:tikuid].nil?
+      @houses = House.all
+    else
+      @houses = House.where(district_id: params[:tikuid])
+    end
   end
 
   # GET /houses/1 or /houses/1.json
@@ -65,6 +69,6 @@ class HousesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def house_params
-      params.require(:house).permit(:address, :floorplan, :age, :price, :tel, :renovation, :detail)
+      params.require(:house).permit(:district_id, :address, :floorplan, :age, :price, :tel, :renovation, :detail)
     end
 end
