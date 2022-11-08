@@ -13,6 +13,7 @@ class HousesController < ApplicationController
 
   # GET /houses/1 or /houses/1.json
   def show
+    @housepicture = Housepicture.new
   end
 
   # GET /houses/new
