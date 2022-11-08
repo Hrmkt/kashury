@@ -11,45 +11,69 @@
     </div>
   <% end %>
 
+<div class="row">
+  <div class="col">
   <div class="field">
-    <%= form.label :district %>
+    <%= form.label "地区名" %>
     <%= form.number_field :district_id %>
   </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
   </div>
-
+  
+  <div class="col">
   <div class="field">
-    <%= form.label :floorplan %>
+    <%= form.label "住所" %>
+    <%= form.text_field :address %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+  <div class="field">
+    <%= form.label "間取り" %>
     <%= form.text_field :floorplan %>
   </div>
-
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
   </div>
 
+  <div class="col">
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tel %>
-    <%= form.text_field :tel %>
-  </div>
-
-  <div class="field">
-    <%= form.label :renovation %>
+    <%= form.label "改装" %>
     <%= form.check_box :renovation %>
   </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col">
   <div class="field">
-    <%= form.label :detail %>
+    <%= form.label "築年数" %>
+    <%= form.number_field :age %>
+  </div>
+  </div>
+
+   <div class="col">
+   <div class="field">
+    <%= form.label "TEL" %>
+    <%= form.text_field :tel %>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+  <div class="field">
+    <%= form.label "価格" %>
+    <%= form.number_field :price %>
+  </div>
+  </div>
+
+  <div class="col">
+  <div class="field">
+    <%= form.label "その他詳細" %>
     <%= form.text_area :detail %>
   </div>
+  </div>
+</div>
 
   <div class="actions">
     <%= form.submit %>

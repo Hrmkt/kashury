@@ -3,15 +3,17 @@ class HousesController < ApplicationController
 
   # GET /houses or /houses.json
   def index
-    if params[:tikuid].nil?
+    session[:selected_tikuid] ||= params[:tikuid]
+    if session[:selected_tikuid].nil?
       @houses = House.all
     else
-      @houses = House.where(district_id: params[:tikuid])
+      @houses = House.where(district_id: session[:selected_tikuid])
     end
   end
 
   # GET /houses/1 or /houses/1.json
   def show
+    @housepicture = Housepicture.new
   end
 
   # GET /houses/new
