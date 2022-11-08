@@ -14,6 +14,7 @@ class HousesController < ApplicationController
   # GET /houses/1 or /houses/1.json
   def show
     @housepicture = Housepicture.new
+    @housepicture.house_id =  @house.id
   end
 
   # GET /houses/new

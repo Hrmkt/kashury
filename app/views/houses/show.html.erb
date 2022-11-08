@@ -35,6 +35,11 @@
   <%= @house.detail %>
 </p>
 
+<p>
+  <strong>写真:</strong>
+  <%= image_tag(url_for(image_of_housepictures_path(@housepicture.house_id)),size:'100x100') %></td>
+</p>
+
 <%= link_to '変更', edit_house_path(@house) %> |
 <%= link_to '戻る', houses_path %>
 <%= render 'housepicture_upload', housepicture: @housepicture %>

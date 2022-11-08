@@ -25,11 +25,9 @@ class HousepicturesController < ApplicationController
 
     respond_to do |format|
       if @housepicture.save
-        format.html { redirect_to housepicture_url(@housepicture), notice: "Housepicture was successfully created." }
-        format.json { render :show, status: :created, location: @housepicture }
+        format.html { redirect_to house_url(@housepicture.house_id), notice: "Housepicture was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @housepicture.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -76,11 +74,11 @@ class HousepicturesController < ApplicationController
     def housepicture_attributes
       if housepicture_params[:photo].blank?
         {
-          name: housepicture_params[:name]
+          name: housepicture_params[:name], house_id: housepicture_params[:house_id]
         }
       else
       {
-        name: housepicture_params[:name], photo: housepicture_params[:photo].read
+        name: housepicture_params[:name], photo: housepicture_params[:photo].read, house_id: housepicture_params[:house_id]
       }
       end
     end
