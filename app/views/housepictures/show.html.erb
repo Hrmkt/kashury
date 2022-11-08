@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>写真名:</strong>
   <%= @housepicture.name %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
+  <strong>写真:</strong>
   <%= image_tag(url_for(image_of_housepictures_path(@housepicture)),size:'100x100') %></td>
 </p>
 
 <p>
-  <strong>House:</strong>
+  <strong>空き家:</strong>
   <%= @housepicture.house_id %>
 </p>
 
