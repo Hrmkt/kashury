@@ -2,10 +2,12 @@
 <p><center>___________________________________________________________________________</center></p>
 <p><font size= 7><center>出雲市</center></font></p>
 
+<p style="text-align: right"><font size= 5><%= link_to 'ログイン' , login_path %></font></p>
 
+<div style="text-align:center">
   <div class="row">
     <div class="col">
-<img src="images/map.jpg" usemap="#ImageMap" alt="" />
+    <img src="images/map.jpg" usemap="#ImageMap" alt="" />
 <map name="ImageMap">
   <area shape="poly" coords="400,99,402,99,412,74,371,37,495,39,526,13,635,7,661,17,695,23,687,115,677,125,630,108,602,123,596,144,612,164,613,179,531,175,458,199,448,172,410,150,373,167,352,184,335,169,296,164,280,145,296,120,315,108,315,94,333,97,336,83,396,97,411,94" href="<%= houses_path(tikuid: 2) %>" alt="" />
   <area shape="poly" coords="209,67,306,79,309,108,282,126,278,147,284,162,304,171,327,172,348,186,318,206,291,211,281,231,267,236,247,231,236,222,243,172,223,142,177,103,162,102,171,94,173,69,197,89,212,77,213,67,248,98" href="<%= houses_path(tikuid: 6) %>" alt="" />
@@ -16,13 +18,14 @@
   <area shape="poly" coords="153,369,167,387,181,388,152,439,152,468,151,493,123,508,117,534,87,542,84,544,88,579,66,574,3,499,16,456,12,404,83,404,129,391,156,368,129,389" href="<%= houses_path(tikuid: 4) %>" alt="" />
 </map>
 </map>
- 　</div>
+ 　  </div>
   </div>
+</div>
 
-  <p><%= link_to '地区情報へ' , districts_path%></p>
-<p><%= link_to '空き家の写真へ' , housepictures_path%></p>
-<p><%= link_to '空き家の情報へ' , houses_path%></p>
-<p><%= link_to 'タグ' , labels_path%></p>
-<p><%= link_to 'ピン' , pins_path%></p>
-<p><%= link_to 'ログイン' , login_path %></p>
-  
+<div class="row">
+<div class="col">
+<%= link_to '空き家の情報へ' , houses_path%>
+<%= link_to 'タグ' , labels_path%>
+<%= link_to 'ピン' , pins_path%>
+</div>
+</div>
