@@ -1,12 +1,7 @@
-<p><center><font size= 15>Kashury</font></center></p>
-<p><center>_______________________________________________________________________________________</center></p>
+<p><center><font size= 15>KASHURY</font></center></p>
+<p><center>___________________________________________________________________________</center></p>
 <p><font size= 7><center>出雲市</center></font></p>
-<p><%= link_to '地区情報へ' , districts_path%></p>
-<p><%= link_to '空き家の写真へ' , housepictures_path%></p>
-<p><%= link_to '空き家の情報へ' , houses_path%></p>
-<p><%= link_to 'タグ' , labels_path%></p>
-<p><%= link_to 'ピン' , pins_path%></p>
-<p><%= link_to 'ログイン' , login_path %></p>
+
 
   <div class="row">
     <div class="col">
@@ -23,30 +18,11 @@
 </map>
  　</div>
   </div>
+
+  <p><%= link_to '地区情報へ' , districts_path%></p>
+<p><%= link_to '空き家の写真へ' , housepictures_path%></p>
+<p><%= link_to '空き家の情報へ' , houses_path%></p>
+<p><%= link_to 'タグ' , labels_path%></p>
+<p><%= link_to 'ピン' , pins_path%></p>
+<p><%= link_to 'ログイン' , login_path %></p>
   
-  <div class="row">
-    <div class="col">
-    <%= link_to '出雲地区' , houses_path(tikuid: 1)%>
-    </div>
-    <div class="col">
-    <%= link_to '平田地区' , houses_path(tikuid: 2)%>
-    </div>
-    <div class="col">
-    <%= link_to '佐田地区' , houses_path(tikuid: 3)%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-    <%= link_to '多岐地区' , houses_path(tikuid: 4)%>
-    </div>
-    <div class="col">
-    <%= link_to '湖陵地区' , houses_path(tikuid: 5)%>
-    </div>
-    <div class="col">
-    <%= link_to '大社地区' , houses_path(tikuid: 6)%>
-   </div>
-  <div class="row">
-    <div class="col">
-    <%= link_to '斐川地区' , houses_path(tikuid: 7)%>
-  　</div>
-  </div>
