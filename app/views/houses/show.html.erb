@@ -1,39 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>住所:</strong>
-  <%= @house.address %>
-</p>
-
-<p>
-  <strong>間取り:</strong>
-  <%= @house.floorplan %>
-</p>
-
-<p>
-  <strong>築年数:</strong>
-  <%= @house.age %>
-</p>
-
-<p>
-  <strong>価格:</strong>
-  <%= @house.price %>
-</p>
-
-<p>
-  <strong>TEL:</strong>
-  <%= @house.tel %>
-</p>
-
-<p>
-  <strong>改装:</strong>
-  <%= @house.renovation %>
-</p>
-
-<p>
-  <strong>その他詳細:</strong>
-  <%= @house.detail %>
-</p>
+<%= render 'show_template', house: @house %>
 
 <%= link_to '変更', edit_house_path(@house) %> |
 <%= link_to '戻る', houses_path %>

@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  
 
   <div class="field">
     <%= form.label :photo %>
@@ -22,8 +19,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :house_id %>
-    <%= form.number_field :house_id %>
+    <%= form.hidden_field :house_id %>
   </div>
 
   <div class="actions">

@@ -1,13 +1,52 @@
-<h1>ログイン</h1>
+<!--<div class="parent">
+<div class="login">
+    <h1>KASHURY</h1>
+    <form class="form" method="post" action="#">
+      <p class="field">
+        <input type="text" name="login" placeholder="Email" required/>
+        <i class="fa fa-user"></i>
+      </p>
+      <p class="field">
+        <input type="password" name="password" placeholder="Password" required/>
+        <i class="fa fa-lock"></i>
+      </p>
+
+      <p class="submit"><input type="submit" name="sent" value="ログイン"></p>
+        <h5><center><%= link_to '新規登録', signup_path %></center></h5>
+    </form>
+  </div>--> <!--/ Login-->
+<!--</div>-->
+
+
+
+<!--<p>ログイン</p>
 <%= form_with model: @session, local: true do |form|%>
   <%= flash[:danger] %>
 
-  <%= form.label :email, 'メールアドレス' %>
-  <%= form.email_field :email %>
+  <div><%= form.label :email, 'メールアドレス' %></div>
+  <div><%= form.email_field :email %></div>
 
-  <%= form.label :password, 'パスワード' %>
-  <%= form.password_field :password %>
-  
-  <%= form.submit 'ログイン' %>
-  <br><%= link_to '新規登録', signup_path %></br>
-<% end %>
+  <div><%= form.label :password, 'パスワード' %></div>
+  <div><%= form.password_field :password %></div>
+
+  <div><%= form.submit 'ログイン' %></div>
+  <div><%= link_to '新規登録', signup_path %></div>
+
+<% end %>-->
+
+<div class="parent">
+  <div class="login">
+    <h1>KASHURY</h1>
+    <form class="form" method="post" action="<%= login_path %>">
+      <p class="field">
+        <input type="text" name="email" placeholder="Email" required/>
+      </p>
+      <p class="field">
+        <input type="password" name="password" placeholder="Password" required/>
+      </p>
+
+      <p class="submit"><input type="submit" name="sent" value="ログイン"></p>
+        <h5><center><%= link_to '新規登録', signup_path %></center></h5>
+    </form>
+  </div> <!--/ Login-->
+</div>
