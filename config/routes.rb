@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/top'
+ # get 'home/top'
   get '/', to: 'home#top'
   resources :labels
   resources :pins
@@ -16,4 +16,7 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/image_of_housepictures/:id', to: 'housepictures#get_image', as:'image_of_housepictures'
+
+  get "search" => "home#search"
+  root to: 'home#top'
 end
