@@ -16,7 +16,7 @@
     <% @housepictures.each do |housepicture| %>
       <tr>
         <td><%= housepicture.name %></td>
-        <td><%= image_tag(url_for(image_of_housepictures_path(housepicture)), size:'100x100')%></td>
+        <td><%= image_tag(url_for(image_of_housepictures_path(housepicture)), size:'80x80')%></td>
         <td><%= housepicture.house_id %></td>
         <td><%= link_to '詳細', housepicture %></td>
         <td><%= link_to '変更', edit_housepicture_path(housepicture) %></td>

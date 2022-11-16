@@ -29,11 +29,10 @@
         <td><%= house.tel %></td>
         <td><%= house.renovation %></td>
         <td><%= house.detail %></td>
-        <td>
+        <td nowrap>
         <% house.housepictures.each_with_index do |housepicture,i| %>
         <%= image_tag(url_for(image_of_housepictures_path(housepicture.id)), size:'100x100')%>
-        <%=i+1%>
-        <% if  %>
+        <% if (i+1) % 3 == 0 %>
             <br>
         <%end%>
         <%end%>
