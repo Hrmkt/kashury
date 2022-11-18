@@ -47,10 +47,11 @@ class HousepicturesController < ApplicationController
 
   # DELETE /housepictures/1 or /housepictures/1.json
   def destroy
+    house_id = @housepicture.house.id
     @housepicture.destroy
 
     respond_to do |format|
-      format.html { redirect_to housepictures_url, notice: "Housepicture was successfully destroyed." }
+      format.html { redirect_to house_url(house_id), notice: "Housepicture was successfully destroyed." }
       format.json { head :no_content }
     end
   end
