@@ -26,13 +26,7 @@ body {
 
 /*Login form style*/
 
-/* === Logo === */
-.logo {
-  background-position: center;
-  height: 60px;
-  width: 100px;
-  margin: 100px auto 30px auto;
-}
+
 
 /* === Form === */
 .form {
@@ -84,6 +78,9 @@ body {
 
   .submit {
     text-align: center;
+  }
+  p.first-child{
+    margin-top: 50px;
   }
   p {
     &:first-child {
