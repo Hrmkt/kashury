@@ -38,6 +38,9 @@
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="pins">ピン</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="profile">登録者情報</a>
+        </li>
       </ul>
       <%= form_with url: search_path, local: true, method: :get,class: "d-flex" do |f| %>
         <%= f.text_field :keyword, class: "form-control me-2", placeholder: "地区名/住所", type:"search", aria:{label:"Search"} %>

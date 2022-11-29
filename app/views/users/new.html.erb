@@ -24,7 +24,7 @@
   <!--<div class="parent">
   <div class="signup">
     <h1>KASHURY</h1>
-    <form class="form" method="post" action="<%= signup_path %>">
+    <%= form_with model: @session, local: true, class: "form" do |form| %>
       <p class="field">
         <input type="text" name="email" placeholder="Email" required/>
       </p>
@@ -32,19 +32,20 @@
         <input type="password" name="password" placeholder="Password" required/>
       </p>
       <p class="field">
-        <input type="password" name="password_confirmation" placeholder="Password_confirmation" required/>
+        <input type="password" name="password_confirmation" placeholder="Password_comfirmation" required/>
       </P>
       <p class="submit"><input type="submit" name="sent" value="登録"></p>
-    </form>
+    <% end %>
   </div>--> <!--/ Login-->
   <!--</div>
-<% end %>-->
+  <% end %>-->
+ 
 
 <!--<div class="parent">
   <div class="login">
     <h1>KASHURY</h1>
-    <form class="form" method="post" action="<%= login_path %>">
-      <p class="field">
+    <%= form_with model: @session, local: true, class: "form" do |form| %>
+      <p class="field first-child">
         <input type="text" name="email" placeholder="Email" required/>
       </p>
       <p class="field">
@@ -53,6 +54,6 @@
 
       <p class="submit"><input type="submit" name="sent" value="ログイン"></p>
         <h5><center><%= link_to '新規登録', signup_path %></center></h5>
-    </form>
+    <% end %>
   </div>--> <!--/ Login-->
 <!--</div>-->
