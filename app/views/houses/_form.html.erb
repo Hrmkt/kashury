@@ -12,71 +12,72 @@
   <% end %>
 
 <div class="row">
-  <div class="col">
+  <div class="col-md">
   <div class="field">
     <%= form.label "地区名" %>
-    <%= form.number_field :district_id %>
+    <%= form.select :district_id, District.all.map { |date| [date.name,date.id]},{}, class: "form-control" %>
   </div>
   </div>
   
-  <div class="col">
+  <div class="col-md">
   <div class="field">
     <%= form.label "住所" %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control" %>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col">
+  <div class="col-md">
   <div class="field">
     <%= form.label "間取り" %>
-    <%= form.text_field :floorplan %>
+    <%= form.text_field :floorplan, class: "form-control" %>
   </div>
   </div>
 
-  <div class="col">
+  <div class="col-md">
   <div class="field">
-    <%= form.label "改装" %>
-    <%= form.check_box :renovation %>
+    <%= form.label "改装", class:"form-check-label" %>
+    <div class="form-check form-switch" style="margin-top: 5px;">
+    <%= form.check_box :renovation, class:"form-check-input", style:"height: 1.5em; width: 3em;" %>
   </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col">
+  <div class="col-md">
   <div class="field">
     <%= form.label "築年数" %>
-    <%= form.number_field :age %>
+    <%= form.number_field :age, class: "form-control" %>
   </div>
   </div>
 
-   <div class="col">
+   <div class="col-md">
    <div class="field">
     <%= form.label "TEL" %>
-    <%= form.text_field :tel %>
+    <%= form.text_field :tel, class: "form-control" %>
   </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col">
+  <div class="col-md">
   <div class="field">
     <%= form.label "価格" %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, class: "form-control" %>
   </div>
   </div>
 
-  <div class="col">
+  <div class="col-md">
   <div class="field">
     <%= form.label "その他詳細" %>
-    <%= form.text_area :detail %>
+    <%= form.text_area :detail, class: "form-control" %>
   </div>
   </div>
 
 </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "登録", class: "form-control btn btn-dark" %>
   </div>
 <% end %>
