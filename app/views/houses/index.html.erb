@@ -47,5 +47,23 @@
 
 <br>
 
-<%= link_to '空き家情報の追加', new_house_path %>
-<p><%= link_to 'トップに戻る' , '/' %></p>
+<%  @houses.each do |house| %>
+<div class="alert alert-info">
+    <h4 id=<%= house.id %>>No.<%= house.id %></h4>
+<%= render 'show_template', house: house%>
+<div class="row">
+  <div class="col-md-2 offset-md-6" style="margin-top: 10px;">
+    <%= link_to '詳細', house, class: "form-control btn btn-warning" %>
+  </div>
+  <div class="col-md-2" style="margin-top: 10px;">
+    <%= link_to '変更',edit_house_path(house), class: "form-control btn btn-warning" %>
+  </div>
+  <div class="col-md-2" style="margin-top: 10px;">
+    <%= link_to '削除', house, method: :delete, data: {confirm: 'Are you sure?' },class: "form-control btn btn-warning" %>
+  </div>
+</div>
+<br><br>
+<%end%>
+<%= link_to '空き家情報の追加', new_house_path, class: "form-control btn btn-dark" %>
+<br><br>
+<%= link_to 'トップに戻る' , '/', class: "form-control btn btn-light" %>
