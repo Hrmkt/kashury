@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<% if logged_in? %>
+  <div class="row">
+     <div class="col-md-2 offset-md-10">
+         <% pin = Pin.where(house_id: house.id, user_id: current_user.id).first %>
+         <% if pin.nil? %>
+          <%= form_with(model: Pin.new) do |f| %>
+            <%= f.hidden_field :house_id, :value => house.id %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+            <%= f.submit "ピン登録", class: "form-control btn btn-outline-primary btn-sm" %>
+         <% end %>
+         <% else %>
+           <%= link_to 'ピン解除', pin, method: :delete, data:{ confirm:"ピン解除しますか？"}, class: "form-control btn btn-outline-dark btn sm" %>
+         <% end%>
+     </div>
+  </div>
+<% end %>
+
 <p>
   <strong>住所:</strong>
   <%= house.address %>

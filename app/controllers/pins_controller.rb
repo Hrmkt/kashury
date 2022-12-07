@@ -26,7 +26,11 @@ class PinsController < ApplicationController
 
     respond_to do |format|
       if @pin.save
-        format.html { redirect_to pin_url(@pin), notice: "Pin was successfully created." }
+        if request.referer&.include?("/houses/")
+          format.html { redirect_to house_url(@pin.house_id), notice: "Pin was successfully created." }
+        else
+          format.html { redirect_to houses_url(anchor: @pin.house_id), notice: "Pin was successfully created." }
+        end
         format.json { render :show, status: :created, location: @pin }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,7 +57,11 @@ class PinsController < ApplicationController
     @pin.destroy
 
     respond_to do |format|
-      format.html { redirect_to pins_url, notice: "Pin was successfully destroyed." }
+      if request.referer&.include?("/houses/")
+        format.html { redirect_to house_url(house_id), notice: "Pin was successfully destroyed." }
+      else
+        format.html { redirect_to houses_url(anchor: @pin.house_id), notice: "Pin was successfully destroyed." }
+      end
       format.json { head :no_content }
     end
   end
