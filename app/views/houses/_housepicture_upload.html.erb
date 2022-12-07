@@ -14,8 +14,8 @@
   
 
   <div class="field">
-    <%= form.label :photo %>
-    <%= form.file_field :photo %>
+    <%= form.label "空き家の写真を選択する" %>
+    <%= form.file_field :photo, class: "form-control" %>
   </div>
 
   <div class="field">
@@ -23,6 +23,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "写真をアップロードする", class: "form-control btn btn-success" %>
   </div>
 <% end %>

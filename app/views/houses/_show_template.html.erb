@@ -1,45 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>住所:</strong>
-  <%= house.address %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-hover">
+<tr>
+  <th>住所:</th>
+  <td><%= house.address %></td>
+</tr>
 
-<p>
-  <strong>間取り:</strong>
-  <%= house.floorplan %>
-</p>
+<tr>
+  <th>間取り:</th>
+  <td><%= house.floorplan %></td>
+</tr>
 
-<p>
-  <strong>築年数:</strong>
-  <%= house.age %>
-</p>
+<tr>
+  <th>築年数:</th>
+  <td><%= house.age %></td>
+</tr>
 
-<p>
-  <strong>価格:</strong>
-  <%= house.price %>
-</p>
+<tr>
+  <td>価格:</td>
+  <td><%= house.price %></td>
+</tr>
 
-<p>
-  <strong>TEL:</strong>
-  <%= house.tel %>
-</p>
+<tr>
+  <td>TEL:</td>
+  <td><%= house.tel %></td>
+</tr>
 
-<p>
-  <strong>改装:</strong>
-  <%= house.renovation %>
-</p>
+<tr>
+  <td>改装:</td>
+  <td><%= house.renovation %></td>
+</tr>
 
-<p>
-  <strong>その他詳細:</strong>
-  <%= house.detail %>
-</p>
+<tr>
+  <td>その他詳細:</td>
+  <td><%= house.detail %></td>
+</tr>
+</table>
+</div>
 
+<div class="col-md-6">
+<strong>写真:</strong>
 <% house.housepictures.each do |housepicture| %>
 <p>
-  <strong>写真:</strong>
   <%= image_tag(url_for(image_of_housepictures_path(housepicture.id)),size:'80x80') %>
   <td><%= link_to '削除', housepicture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </p>
 <% end %>
+</div>
+</div>
 
