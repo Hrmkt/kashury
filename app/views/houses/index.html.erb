@@ -2,48 +2,7 @@
 
 <h1>空き家情報</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>地区</th>
-      <th>住所</th>
-      <th>間取り</th>
-      <th>築年数</th>
-      <th>価格</th>
-      <th>TEL</th>
-      <th>改装</th>
-      <th>詳細</th>
-      <th>写真</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @houses.each do |house| %>
-      <tr>
-      　<td><%= house.district_id %></td>
-        <td><%= house.address %></td>
-        <td><%= house.floorplan %></td>
-        <td><%= house.age %></td>
-        <td><%= house.price %></td>
-        <td><%= house.tel %></td>
-        <td><%= house.renovation %></td>
-        <td><%= house.detail %></td>
-        <td nowrap>
-        <% house.housepictures.each_with_index do |housepicture,i| %>
-        <%= image_tag(url_for(image_of_housepictures_path(housepicture.id)), size:'100x100')%>
-        <% if (i+1) % 3 == 0 %>
-            <br>
-        <%end%>
-        <%end%>
-        </td>
-        <td><%= link_to '詳細', house %></td>
-        <td><%= link_to '変更', edit_house_path(house) %></td>
-        <td><%= link_to '削除', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 

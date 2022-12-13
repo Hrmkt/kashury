@@ -1,6 +1,8 @@
 
 <%= render 'show_template', house: @house %>
 
-<%= link_to '変更', edit_house_path(@house) %> |
-<%= link_to '戻る', houses_path %>
+<%= link_to '変更', edit_house_path(@house), class: "form-control btn btn-dark" %> 
+<br><br>
+<%= link_to '戻る', houses_path, class: "form-control btn btn-light" %>
+
 <%= render 'housepicture_upload', housepicture: @housepicture %>
