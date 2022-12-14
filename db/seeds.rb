@@ -26,3 +26,15 @@ CSV.foreach("db/districts.csv",headers:true) do |row|
         name: row["name"]
     )
 end
+
+Tag.delete_all
+reset_pk_sequense("tags")
+Tag.create([
+  { name: '出雲' },
+  { name: '斐川' },
+  { name: '平田' },
+  { name: '大社' },
+  { name: '湖陵' },
+  { name: '多伎' },
+  { name: '佐田' }
+])
