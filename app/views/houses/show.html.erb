@@ -1,8 +1,10 @@
 
 <%= render 'show_template', house: @house %>
-
+<%  if admin? %>
 <%= link_to '変更', edit_house_path(@house), class: "form-control btn btn-dark" %> 
+<% end %>
 <br><br>
 <%= link_to '戻る', houses_path, class: "form-control btn btn-light" %>
-
+<%  if admin? %>
 <%= render 'housepicture_upload', housepicture: @housepicture %>
+<% end %>

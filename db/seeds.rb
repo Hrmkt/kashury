@@ -26,3 +26,4 @@ CSV.foreach("db/districts.csv",headers:true) do |row|
         name: row["name"]
     )
 end
+User.create(email: "admin@admin.com",password: "xxxxxxxx",password_confirmation:"xxxxxxxx",name: "管理者",admin:true)

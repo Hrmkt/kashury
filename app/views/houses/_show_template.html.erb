@@ -62,7 +62,9 @@
 <% house.housepictures.each do |housepicture| %>
 <p>
   <%= image_tag(url_for(image_of_housepictures_path(housepicture.id)),size:'80x80') %>
+<% if admin? %>
   <td><%= link_to '削除', housepicture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
 </p>
 <% end %>
 </div>

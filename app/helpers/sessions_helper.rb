@@ -26,4 +26,12 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+  # 管理者かどうかを審議真偽値を返す
+  def admin?
+    if current_user.nil?
+      false
+    else
+      current_user.admin
+    end
+  end
 end
