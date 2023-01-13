@@ -2,29 +2,27 @@
 
 <h1>ピン一覧</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>House</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td><%= pin.user_id %></td>
-        <td><%= pin.house_id %></td>
-        <td><%= link_to '詳細', pin %></td>
-        <td><%= link_to '変更', edit_pin_path(pin) %></td>
-        <td><%= link_to '削除', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'ピンの追加', new_pin_path %>
-<p><%= link_to 'トップに戻る' , '/' %></p>
+<%  @houses.each do |house| %>
+<div class="alert alert-info">
+    <h4 id=<%= house.id %>>No.<%= house.id %></h4>
+<%= render 'houses/show_template', house: house%>
+<div class="row">
+  <div class="col-md-2 offset-md-6" style="margin-top: 10px;">
+    <%= link_to '詳細', house, class: "form-control btn btn-warning" %>
+  </div>
+  <div class="col-md-2" style="margin-top: 10px;">
+  <% if admin? %>
+    <%= link_to '変更',edit_house_path(house), class: "form-control btn btn-warning" %>
+  <% end %>
+  </div>
+  <div class="col-md-2" style="margin-top: 10px;">
+  <% if admin? %>
+    <%= link_to '削除', house, method: :delete, data: {confirm: 'Are you sure?' },class: "form-control btn btn-warning" %>
+  <% end %>
+  </div>
+</div>
+</div>
+<br><br>
+<%end%>
+<br><br>
+<%= link_to 'トップに戻る' , '/', class: "form-control btn btn-light" %>

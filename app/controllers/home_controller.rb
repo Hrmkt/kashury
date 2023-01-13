@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     session[:selected_tikuid] = nil
     session[:selected_keyword] = nil
     session[:selected_tag] = nil
+    session[:selected_pin] = nil
   end
 
   def search
