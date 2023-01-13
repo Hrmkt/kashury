@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_14_001545) do
+ActiveRecord::Schema.define(version: 2023_01_11_012321) do
 
   create_table "districts", force: :cascade do |t|
     t.string "name"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 2022_12_14_001545) do
 
   create_table "pins", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "house_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tag_relations", force: :cascade do |t|
+    t.integer "label_id"
     t.integer "house_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

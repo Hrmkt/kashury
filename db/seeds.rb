@@ -18,6 +18,16 @@ def self.reset_pk_sequense(table_name)
     end
 end
 
+Label.delete_all
+reset_pk_sequense("labels")
+
+Label.create(tag: "AAAA")
+Label.create(tag: "BBBB")
+Label.create(tag: "CCCC")
+Label.create(tag: "DDDD")
+Label.create(tag: "EEEE")
+
+
 District.delete_all
 reset_pk_sequense("districts")
 

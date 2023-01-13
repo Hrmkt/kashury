@@ -54,11 +54,23 @@
   <td>その他詳細:</td>
   <td><%= house.detail %></td>
 </tr>
+
+<tr>
+ <td>タグ：</td>
+ <td>
+   <% house.labels.each do |data| %>
+      <span class="badge bg-success">
+       <%= link_to data.tag, tag_search_path(selected_tag: data.id) %>
+      </span>
+   <%end%>
+ </td>
+</tr>
 </table>
 </div>
 
 <div class="col-md-6">
 <strong>写真:</strong>
+
 <% house.housepictures.each do |housepicture| %>
 <p>
   <%= image_tag(url_for(image_of_housepictures_path(housepicture.id)),size:'80x80') %>

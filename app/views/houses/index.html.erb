@@ -9,7 +9,7 @@
 <%  @houses.each do |house| %>
 <div class="alert alert-info">
     <h4 id=<%= house.id %>>No.<%= house.id %></h4>
-<%= render 'show_template', house: house%>
+<%= render 'houses/show_template', house: house%>
 <div class="row">
   <div class="col-md-2 offset-md-6" style="margin-top: 10px;">
     <%= link_to '詳細', house, class: "form-control btn btn-warning" %>
@@ -24,6 +24,7 @@
     <%= link_to '削除', house, method: :delete, data: {confirm: 'Are you sure?' },class: "form-control btn btn-warning" %>
   <% end %>
   </div>
+</div>
 </div>
 <br><br>
 <%end%>

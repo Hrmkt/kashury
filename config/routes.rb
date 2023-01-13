@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   get "search" => "home#search"
   root to: 'home#top'
+  get "tag_search" => "home#tag_search"
 end

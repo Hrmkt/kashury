@@ -77,6 +77,20 @@
 
 </div>
 
+<div>タグ</div>
+<div class="row">
+ <div class="col-md">
+   <%= form.collection_check_boxes(:label_ids, Label.all, :id, :tag) do |date| %>
+       <%= date.label class: "form-check-label" do %>
+         <%= date.check_box class: "form-check-input" %>
+         <%= date.text %>
+       <% end %>
+       <br>
+   <% end %>
+ </div>
+</div>
+
+
   <div class="actions">
     <%= form.submit "登録", class: "form-control btn btn-dark" %>
   </div>
