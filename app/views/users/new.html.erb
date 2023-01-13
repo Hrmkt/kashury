@@ -1,59 +1,29 @@
 <p><center><font size = 8>利用者登録</font></center></p>
-
-<%= form_with model: @user, url: signup_path, local: true do |form| %>
-  <% if @user.errors.any? %>
-    <strong><%= @user.errors.count %>個のエラーがあります。 </strong>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-    
-  <%= form.label :email, 'メールアドレス' %>
-  <%= form.email_field :email %>
-
-  <%= form.label :password, 'パスワード' %>
-  <%= form.password_field :password %>
-
-  <%= form.label :password_confirmation, 'パスワード（確認）' %>
-  <%= form.password_field :password_confirmation %>
-
-  <%= form.submit '登録' %>
-
-  <!--<div class="parent">
-  <div class="signup">
-    <h1>KASHURY</h1>
-    <%= form_with model: @session, local: true, class: "form" do |form| %>
-      <p class="field">
-        <input type="text" name="email" placeholder="Email" required/>
-      </p>
-      <p class="field">
-        <input type="password" name="password" placeholder="Password" required/>
-      </p>
-      <p class="field">
-        <input type="password" name="password_confirmation" placeholder="Password_comfirmation" required/>
-      </P>
-      <p class="submit"><input type="submit" name="sent" value="登録"></p>
-    <% end %>
-  </div>--> <!--/ Login-->
-  <!--</div>
-  <% end %>-->
- 
-
-<!--<div class="parent">
+<%= flash[:danger] %>
+<div class="parent">
   <div class="login">
     <h1>KASHURY</h1>
-    <%= form_with model: @session, local: true, class: "form" do |form| %>
-      <p class="field first-child">
-        <input type="text" name="email" placeholder="Email" required/>
-      </p>
-      <p class="field">
-        <input type="password" name="password" placeholder="Password" required/>
-      </p>
-
-      <p class="submit"><input type="submit" name="sent" value="ログイン"></p>
-        <h5><center><%= link_to '新規登録', signup_path %></center></h5>
-    <% end %>
-  </div>--> <!--/ Login-->
-<!--</div>-->
+<% if @user.errors.any? %>
+      <strong><%= @user.errors.count %>個のエラーがあります。</storong>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+<% end %>
+<%= form_with model: @user, local: true, class: "form" do |form| %>
+  <p class="field first-child">
+    <%= form.text_field :email, { placeholder: "Email", required: true} %>
+  </p>
+  <p class="field">
+    <%= form.password_field :password, { placeholder: "Password", required: true} %>
+  </p>
+  <p class="field password-confirmation">
+    <%= form.password_field :password_confirmation, { placeholder: "PasswordConfirmation", required: true} %>
+  </p>
+  <p class="submit">
+    <%= form.submit '登録' %>
+  </P>
+  <% end %>
+  </div>
+  </div>

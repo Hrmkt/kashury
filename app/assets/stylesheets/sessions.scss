@@ -82,6 +82,9 @@ body {
   p.first-child{
     margin-top: 50px;
   }
+  p.password-confirmation{
+    margin-top: 40px;
+  }
   p {
     &:first-child {
       margin-top: 50px;
