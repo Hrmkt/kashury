@@ -32,9 +32,11 @@
          <li class="nav-item">
          <a class="nav-link active" aria-current="page" href="<%= houses_path %>">空き家情報へ</a>
         </li>
+        <% if admin? %>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="<%= labels_path %>">タグ</a>
         </li>
+        <% end %>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="<%= pins_path %>">ピン</a>
         </li>

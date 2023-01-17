@@ -9,7 +9,7 @@ class PinsController < ApplicationController
     @pins.each do |pin|
       session[:selected_pin].push(pin.house_id)
     end
-    @houses = House.where(house_id: session[:selected_pin])
+    @houses = House.where(id: session[:selected_pin])
   end
 
   # GET /pins/1 or /pins/1.json
