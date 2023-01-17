@@ -4,7 +4,12 @@ class PinsController < ApplicationController
 
   # GET /pins or /pins.json
   def index
-    @pins = Pin.all
+    @pins = Pin.where(user_id: current_user.id)
+    session[:selected_pin] = []
+    @pins.each do |pin|
+      session[:selected_pin].push(pin.house_id)
+    end
+    @houses = House.where(id: session[:selected_pin])
   end
 
   # GET /pins/1 or /pins/1.json

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :housepictures
   resources :houses
   resources :districts
+  resources :users
   get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
 
